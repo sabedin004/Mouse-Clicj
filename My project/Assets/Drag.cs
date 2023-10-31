@@ -24,28 +24,28 @@ public class Drag : MonoBehaviour
     {
         if (isBeingHeld)                //if object is being held
         {
-            Vector2 mousePos;                                                                           //create a vector two called mousePos
-            mousePos = Input.mousePosition;                                                             // change the value of mousePos
-            mousePos = Camera.main.ScreenToWorldPoint(mousePos);                                   // change the value of mousePos
-            gameObject.transform.localPosition = new Vector2(mousePos.x, mousePos.y);                   // change position of 
+            Vector2 mousePos;                            //create a vector two called mousePos
+            mousePos = Input.mousePosition;                                                    // change the value of mousePos
+            mousePos = Camera.main.ScreenToWorldPoint(mousePos);                              // change the value of mousePos
+            gameObject.transform.localPosition = new Vector2(mousePos.x, mousePos.y);        // change position of 
         }
     }
 
-    void OnMouseDown()                                                                                     //
+    void OnMouseDown()              //when you press the mouse button
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))                                                    //is the left mouse button is clicked
         {
-            Vector2 mousePos;                                                                                //
-            mousePos = Input.mousePosition;                                                                  //
-            mousePos = Camera.main.ScreenToWorldPoint(mousePos);                                             //
+            Vector2 mousePos;                                                                //create a vector two called mousePos
+            mousePos = Input.mousePosition;                                                 //change the value of mousePos
+            mousePos = Camera.main.ScreenToWorldPoint(mousePos);                           //change the value of mousePos
 
-            isBeingHeld = true;
-        }
+            isBeingHeld = true;                                                           //object is being help
+        }   
     }
 
-    void OnMouseUp()
-    {
-        isBeingHeld = false;
+    void OnMouseUp()                                                                      //when you let go of the mouse button
+    {                                               
+        isBeingHeld = false;                                                            // object is no longer being held
     }
 
 
