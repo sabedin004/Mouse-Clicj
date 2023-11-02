@@ -7,6 +7,8 @@ public class SpriteChange : MonoBehaviour
     //variable for the game
     public SpriteRenderer sp;
     public Sprite newSprite;
+    public Sprite originalSprite;
+    bool Changed = false;
 
 
     // Start is called before the first frame update
@@ -22,10 +24,23 @@ public class SpriteChange : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             ChangeSprite();
+            Changed = true;
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            ChangeSprite();
+                Changed = false;
         }
     }
     void ChangeSprite()
     {
-        sp.sprite = newSprite;
+        if(!Changed)
+        {
+             sp.sprite = newSprite;
+        }
+        else
+        {
+            sp.sprite = originalSprite;
+        }
     }
 }
